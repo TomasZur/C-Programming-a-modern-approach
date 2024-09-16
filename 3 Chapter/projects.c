@@ -81,26 +81,107 @@ int main()
 int main(){
 
 
+    int arr_id[15];
 
     int id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11, id12, id13, id14, id15, id16;
 
-    int row_sum, column_sum, diagonal_sum;
+    int column_sum[3], diagonal_su[1];
+    
+    int row_sum[3];
 
     printf("Enter the number from 1 to 16 in any order: ");
 
-    scanf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d",
+    /*scanf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d",
     &id1, &id2, &id3, &id4, &id5, &id6, &id7, &id8, &id9, &id10, &id11, &id12, &id13, &id14, &id15, &id16);
 
     printf("%d %d %d %d\n%d %d %d %d\n%d %d %d %d\n%d %d %d %d",
     id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11, id12, id13, id14, id15, id16);
+    */
 
-    int i;
-    printf("Row sums: ");
-    for (i = 0; i < 4; i++){
+    scanf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d",
+    &arr_id[0], &arr_id[1], &arr_id[2], &arr_id[3], &arr_id[4], &arr_id[5], &arr_id[6], &arr_id[7], &arr_id[8], &arr_id[9], &arr_id[10], &arr_id[11], &arr_id[12], &arr_id[13], &arr_id[14], &arr_id[15]);
+    
+    int i,j;
 
-        row_sum = id1+id2+id3+id4;
-        
+    /*for (i = 0; i <= 15; i++) {
+        printf("%d\n", arr_id[i]);
     }
+
+    for (i = 0; i < 4; i++) {
+        
+        row_sum = row_sum + arr_id[i];
+
+        if(i==3){
+            printf("Row sum: %d\n", row_sum);
+        }
+        
+    }*/
+
+    for (i = 0; i < 4; i++) {
+        row_sum[i]=0;
+        for (j = 0; j < 4; j++){
+            if(i==0){
+                row_sum[i]=row_sum[i]+arr_id[j];
+            }
+            if(i==1){
+                row_sum[i]=row_sum[i]+arr_id[j+4];
+            }
+            if(i==2){
+                row_sum[i]=row_sum[i]+arr_id[j+8];
+            }
+            if(i==3){
+                row_sum[i]=row_sum[i]+arr_id[j+12];
+            }
+            if(j==3) {
+            printf("Row%d sum: %d\n",i+1, row_sum[i]);
+            }
+
+        }
+
+    }
+    for (i = 0; i < 4; i++) {
+        row_sum[i]=0;
+        for (j = 0; j <= 12; j=j+4){
+            
+            if(i==0){
+                
+                row_sum[i]=row_sum[i]+arr_id[j];  // [0] [4] [8] [12]
+            }
+            if(i==1){
+                row_sum[i]=row_sum[i]+arr_id[j+1]; // [1] [5] [9] [13]
+            }
+            if(i==2){
+                row_sum[i]=row_sum[i]+arr_id[j+2]; // [2] [6] [10] [14]
+            }
+            if(i==3){
+                row_sum[i]=row_sum[i]+arr_id[j+3]; // [3] [7] [11] [15]
+            }
+            if(j==12) {
+            printf("column%d sum: %d\n",i+1, row_sum[i]);
+            }
+
+        }
+
+
+
+    for (i = 0; i < 1; i++) {
+        row_sum[i]=0;
+        for (j = 0; j <= 15; j=j+5){
+            
+            if(i==0){
+                
+                row_sum[i]=row_sum[i]+arr_id[j];  // [3] [6] [9] [12]
+            
+            printf("diagnonal%d sum: %d\n",i+1, row_sum[i]);
+            
+
+            }
+        }
+    }
+
+
+
+
     
 
 
