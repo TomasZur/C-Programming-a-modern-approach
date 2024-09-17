@@ -6,7 +6,7 @@ int main()
     float num, denom, value;
 
     printf("Enter share price (must include a fraction): ");
-    scanf("%d%f/%f", &price, &num, &denom); 
+    scanf("%d%f/%f", &price, &num, &denom);
     printf("Enter number of shares: ");
     scanf("%d", &shares);
 
