@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    int a[N], *p,i=0;
+    int a[N], *p;
     char ch;
     p = a;
 
@@ -15,11 +15,10 @@ int main(void)
         ch = getchar();
         *p = ch;
         p++;
-        i++;
     } while (ch != '\n' && p < a + N);
 
     printf("In reverse order:\n");
-    for (p = a + i-1; p >= a; p--)
+    for (p--; p >= a; p--)
     {
         printf("%c", *p);
     }

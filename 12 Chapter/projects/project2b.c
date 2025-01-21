@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    int first_sentence[99], i = 0, j = 0,*pointer1,*pointer2;
+    int first_sentence[99],*pointer1,*pointer2;
     char ch;
     bool palindrome = true;
     pointer1=first_sentence;
@@ -22,10 +22,9 @@ int main(void)
         *pointer1 = tolower(ch);
         pointer1++;
 
-        i++;
+        
     }
-    for (pointer1 = first_sentence + i-1; pointer1 >= first_sentence; pointer1--)
-    
+    for (pointer1--; pointer1 >= first_sentence; pointer1--)
     {
         if(*pointer1!=*pointer2){
             palindrome = false;
